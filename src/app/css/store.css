@@ -1,0 +1,129 @@
+/* ===== STORE PAGE BASIC LAYOUT ===== */
+
+.product-thumb {
+  display: none; /* hidden on desktop */
+}
+
+.store-page {
+  height:85vh;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  justify-content: center;
+  position: relative;      /* important: for background layer */
+  overflow: hidden;
+}
+
+.store-page::before {
+  content: "";
+  position: absolute;
+  inset: 0; /* top/right/bottom/left = 0 */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain; /* or 'cover' if you want it to fill more */
+  opacity: 90;
+  transition: opacity 0.3s ease;
+  pointer-events: none;  /* don’t block clicks */
+  z-index: 0;
+}
+
+/* Hover: Coptic Bound */
+.store-page:has(.product-item:nth-child(1):hover)::before {
+  background-image: url("/images/copticbound.png");
+  opacity:100; /* adjust opacity as you like */
+}
+
+/* Hover: Case Bound */
+.store-page:has(.product-item:nth-child(2):hover)::before {
+  background-image: url("/images/casebound.png");
+  opacity:100;
+}
+
+/* Hover: Field Book */
+.store-page:has(.product-item:nth-child(3):hover)::before {
+  background-image: url("/images/fieldbook.png");
+  opacity:100;
+}
+
+/* Hover: Rough Pad */
+.store-page:has(.product-item:nth-child(4):hover)::before {
+  background-image: url("/images/roughpad.png");
+  opacity:100;
+}
+
+
+.store-title {
+  font-size: 1.6rem;
+  font-weight: 600;
+  position: relative;
+  z-index: 1;
+}
+
+/* row of 4 products */
+.product-row {
+  display: flex;
+  gap: 16px;
+  position: relative;
+  z-index: 1;
+}
+
+.product-item {
+  position: relative;
+  overflow: hidden;
+  text-transform: uppercase;
+  flex: 1;
+  padding: 16px;
+  text-align: center;
+  background: var(--color-surface);
+  text-decoration: none;
+}
+
+/* Ensure the text is above the background image */
+.product-name {
+  position: relative;
+  z-index: 1;
+  font-size:1.2rem;
+  font-weight: 500;
+}
+
+.nav-icon {
+  height:18px;
+  width:auto;
+}
+
+@media (max-width: 768px) {
+  .store-page {
+    height: auto;
+    padding: 24px 16px;
+  }
+
+  /* Disable hover background entirely */
+  .store-page::before {
+    display: none;
+  }
+
+  .product-row {
+    flex-direction: column;
+    gap: 48px;
+  }
+
+  .product-item {
+    padding: 0;
+    background: none;
+    text-align: center;
+  }
+
+  .product-thumb {
+    display: block;
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto 16px;
+    object-fit: contain;
+  }
+
+  .product-name {
+    font-size: 3.3rem;
+    margin:20px 50px;
+    font-weight: 500;
+  }
+}

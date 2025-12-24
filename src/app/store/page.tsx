@@ -1,23 +1,27 @@
 import Link from "next/link";
-import prisma from "@/lib/prisma";
-
-export const runtime = "nodejs";
 
 type Product = {
   id: number;
   name: string;
 };
 
+async function getProducts(): Promise<Product[]> {
+  const res = await fetch(
+    `${process.env.NEXT_PUBLIC_BASE_URL}/api/products`,
+    {
+      cache: "no-store", // we’ll improve this next
+    }
+  );
+
+  if (!res.ok) {
+    throw new Error("Failed to fetch products");
+  }
+
+  return res.json();
+}
+
 export default async function StorePage() {
-  const products: Product[] = await prisma.product.findMany({
-    select: {
-      id: true,
-      name: true,
-    },
-    orderBy: {
-      id: "asc",
-    },
-  });
+  const products = await getProducts();
 
   return (
     <section className="store-page">
@@ -42,3 +46,4 @@ export default async function StorePage() {
     </section>
   );
 }
+

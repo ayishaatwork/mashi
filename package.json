@@ -30,4 +30,7 @@
   "prisma": {
     "seed": "node prisma/seed.js"
   }
+  "scripts": {
+  "build": "prisma generate && next build"
+}
 }

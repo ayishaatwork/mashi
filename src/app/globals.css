@@ -38,6 +38,8 @@ body {
   margin: 0;
   max-width: 100vw;
   overflow-x: hidden;
+  backgroung-colour:#ffff;
+  color:#0000;
 }
 
 .layout-body {

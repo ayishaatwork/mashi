@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { headers } from "next/headers";
 
 type Product = {
   id: number;
@@ -6,7 +7,17 @@ type Product = {
 };
 
 async function getProducts(): Promise<Product[]> {
-  const res = await fetch("/api/products", {
+  const headersList = headers();
+  const host = headersList.get("host");
+
+  if (!host) {
+    throw new Error("Host header not found");
+  }
+
+  const protocol = process.env.NODE_ENV === "development" ? "http" : "https";
+  const url = `${protocol}://${host}/api/products`;
+
+  const res = await fetch(url, {
     cache: "no-store",
   });
 
@@ -43,4 +54,3 @@ export default async function StorePage() {
     </section>
   );
 }
-

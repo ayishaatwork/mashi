@@ -1,35 +1,27 @@
 import Link from "next/link";
-import { headers } from "next/headers";
+import prisma from "@/lib/prisma";
+
+/**
+ * This page runs on the server.
+ * It can safely talk directly to Supabase via Prisma.
+ * No fetch, no API routes, no env URL needed.
+ */
 
 type Product = {
   id: number;
   name: string;
 };
 
-async function getProducts(): Promise<Product[]> {
-  const headersList = headers();
-  const host = headersList.get("host");
-
-  if (!host) {
-    throw new Error("Host header not found");
-  }
-
-  const protocol = process.env.NODE_ENV === "development" ? "http" : "https";
-  const url = `${protocol}://${host}/api/products`;
-
-  const res = await fetch(url, {
-    cache: "no-store",
-  });
-
-  if (!res.ok) {
-    throw new Error("Failed to fetch products");
-  }
-
-  return res.json();
-}
-
 export default async function StorePage() {
-  const products = await getProducts();
+  const products: Product[] = await prisma.product.findMany({
+    select: {
+      id: true,
+      name: true,
+    },
+    orderBy: {
+      id: "asc",
+    },
+  });
 
   return (
     <section className="store-page">
@@ -41,6 +33,7 @@ export default async function StorePage() {
             className="product-item"
           >
             <h2 className="product-name">{product.name}</h2>
+
             <img
               src={`/images/${product.name
                 .toLowerCase()

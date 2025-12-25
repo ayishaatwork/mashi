@@ -63,19 +63,19 @@ export default function Home() {
             <img src="/images/mosaic2.png" alt="Coptic Bound detail" />
           </div>
           <div className="mosaic-item m3 align-right">
-            <img src="/images/mosaic3.jpg" alt="Coptic Bound detail" />
+            <img src="/images/mosaic3.JPG" alt="Coptic Bound detail" />
           </div>
           <div className="mosaic-item m4 align-left">
             <img src="/images/mosaic4.jpg" alt="Case Bound detail" />
           </div>
           <div className="mosaic-item m5 align-right">
-            <img src="/images/mosaic5.jpg" alt="Field Book detail" />
+            <img src="/images/mosaic5.JPG" alt="Field Book detail" />
           </div>
           <div className="mosaic-item m6 align-left">
-            <img src="/images/mosaic6.jpg" alt="Rough Pad detail" />
+            <img src="/images/mosaic6.JPG" alt="Rough Pad detail" />
           </div>
           <div className="mosaic-item m7 align-right">
-            <img src="/images/mosaic7.jpg" alt="Coptic Bound detail" />
+            <img src="/images/mosaic7.JPG" alt="Coptic Bound detail" />
           </div>
           <div className="mosaic-item m8 align-left">
             <img src="/images/mosaic8.jpg" alt="Coptic Bound detail" />

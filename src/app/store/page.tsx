@@ -6,12 +6,9 @@ type Product = {
 };
 
 async function getProducts(): Promise<Product[]> {
-  const res = await fetch(
-    `${process.env.NEXT_PUBLIC_BASE_URL}/api/products`,
-    {
-      cache: "no-store", // we’ll improve this next
-    }
-  );
+  const res = await fetch("/api/products", {
+    cache: "no-store",
+  });
 
   if (!res.ok) {
     throw new Error("Failed to fetch products");

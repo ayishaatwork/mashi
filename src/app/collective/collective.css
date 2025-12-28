@@ -1,0 +1,96 @@
+/* PAGE BASE */
+.collective-page {
+  background: #d8ef77;
+  width: 100%;
+}
+
+/* HERO */
+.collective-hero {
+  padding: 80px 60px 40px;
+}
+
+.collective-title {
+  width: 100%;
+}
+
+.collective-intro {
+  max-width: 520px;
+  margin-top: 24px;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+/* BOOK SECTION */
+.book-section {
+  padding: 60px;
+}
+
+.book-label {
+  display: inline-block;
+  padding: 4px 8px;
+  font-size:1.2rem;
+  margin-bottom: 24px;
+}
+
+/* ARTIST LAYOUT */
+.artist-layout {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 48px;
+  align-items: start;
+}
+
+/* LEFT ART */
+.artist-artwork img {
+  width:80%;
+  height: auto;
+  display: block;
+}
+
+/* RIGHT META */
+.artist-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.artist-name {
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+/* HAND ICON GRID */
+.hand-grid {
+  display: grid;
+  grid-template-columns: repeat(8,20px);
+  gap:20px;
+}
+
+.hand-icon {
+  width:auto;
+  height:25px;
+  color: red;
+}
+
+/* ARTIST PHOTO */
+.artist-photo {
+  width: 120px;
+  height: auto;
+  object-fit: cover;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .collective-hero,
+  .book-section {
+    padding: 24px;
+  }
+
+  .artist-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .artist-meta {
+    margin-top: 24px;
+  }
+}

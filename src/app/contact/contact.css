@@ -1,0 +1,156 @@
+/* CONTACT PAGE */
+
+.contact-page {
+  padding: 80px 15px;
+}
+
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap:350px; /* moved right column further right */
+  align-items: start;
+}
+
+.contact-title {
+  font-size: 3rem;
+  font-weight: 500;
+}
+
+.contact-right {
+  max-width: 600px;
+}
+
+/* Intro text */
+.contact-intro {
+  font-size: 14px;
+}
+
+.contact-intro-bold {
+  font-family: "MashiFontBold";
+}
+
+.contact-bold {
+  font-family: "MashiFontBold";
+}
+
+.contact-intro-bottom {
+  margin-bottom: 20px;
+}
+
+/* FORM */
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  border: 1px solid #515050;
+  padding: 10px;
+  font-size: 13px;
+  margin-bottom:11px;
+  background: transparent;
+  color: #000;
+  font-family: "MashiFont"; /* user text */
+}
+
+/* Placeholder bold */
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  font-family: "MashiFontBold";
+  color: #000;
+}
+
+/* Two-column row */
+.contact-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+/* Submit */
+.contact-submit {
+  padding: 8px 32px;
+  font-family:"MashiFontBold";
+  border: 1px solid #000;
+  background: transparent;
+  font-size: 12px;
+  cursor: pointer;
+  margin-top: 0; /* spacing controlled naturally */
+}
+
+/* FOOTER */
+.contact-footer {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns:2.5fr 2.5fr 1fr;
+  gap: 0;
+  font-size:14px;
+  width: 100%;
+}
+
+.contact-footer a {
+  padding: 10px;
+  text-decoration: none;
+  color: #000;
+  border: 1px solid transparent;
+}
+
+.contact-footer a:hover {
+  text-decoration: underline;
+}
+
+/* ========================= */
+/* CONTACT PAGE — MOBILE */
+/* ========================= */
+
+@media (max-width: 768px) {
+  .contact-page {
+    padding: 40px 20px;
+  }
+
+  .contact-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .contact-title {
+    font-size:40px;
+    font-weight: 500;
+  }
+
+  .contact-right {
+    max-width: 100%;
+  }
+
+  .contact-intro {
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  .contact-row {
+    grid-template-columns: 1fr;
+    gap:0px;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 13px;
+    padding: 12px;
+  }
+
+  .contact-submit {
+    margin-top: 0;
+    padding: 10px 28px;
+    font-family:"MashiFont";
+  }
+
+  .contact-footer {
+    margin-top: 32px;
+    font-size:10px;
+  }
+
+  .contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  font-family: "MashiFont";
+  font-size:12px;
+  color: #000;
+}
+}

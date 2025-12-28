@@ -1,0 +1,313 @@
+/* ===== PRODUCT DETAIL PAGE ===== */
+
+.product-page {
+  font-family:"MashiFont";
+  width:100%;
+  min-height: calc(100vh - var(--nav-height) - 80px);
+  display: flex;
+  align-items: center;
+}
+
+.product-layout {
+  display: grid;
+  grid-template-columns:1fr 1fr; /* image slightly dominant */
+  gap:100px;                          /* reduced from 80px */
+  width:100%;                 /* tighter container */
+  margin: 0 15px;
+  padding:10px;
+}
+
+
+/* LEFT: images */
+.product-media {
+  position: sticky;
+  top:80px;
+  height:85vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding:60px 0px;
+}
+
+.product-image {
+  max-width:100%;
+  max-height:100%;
+  object-fit: contain;
+}
+
+
+.product-details {
+  display: flex;
+  width:800px;
+  flex-direction:column;
+  left:0;
+  height:85vh;
+  gap: 28px;
+  padding:60px;
+  padding-right:100px;
+}
+
+/* Name + price */
+.product-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding-bottom:28px;
+}
+
+.product-title {
+  font-size: 2rem;
+  font-family:"MashiFontBold";
+}
+
+.product-price {
+  font-size: 2rem;
+  font-family:"MashiFontBold";
+}
+
+
+/* Rows 2–4: meta rows */
+.product-meta-row {
+  display: flex;
+  flex-direction: column;
+  gap:15px;
+}
+
+/* colours / sizes pill list */
+.product-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap:30px;
+}
+
+.product-badges {
+  text-transform: uppercase;
+  padding: 4px 0px;
+}
+
+/* description */
+.product-description {
+  font-size: 0.85rem;
+  color: var(--color-muted);
+}
+
+/* ADD TO CART BUTTON */
+.add-to-cart-btn {
+  background: transparent;
+  border: 1.5px solid #000;
+  color:var(--color-text);
+  align-items: center;
+  /* TRUE OVAL SHAPE */
+  width:550px;          /* stretched horizontally */
+  height:140px;          /* controlled height */
+  border-radius:800px /210px;
+
+  /* TEXT */
+  font-size:3.5rem;
+  letter-spacing: 0.02em;
+
+  /* CENTER TEXT */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+  font-family: "MashiFont";
+  transition: opacity 0.15s ease, transform 0.15s ease;
+}
+
+.add-to-cart-btn:hover {
+  opacity: 0.85;
+}
+
+.add-to-cart-btn:active {
+  transform: scale(0.98);
+}
+
+.color-swatch.active .color-text {
+  opacity: 0;
+}
+
+.color-swatch.active .color-dot {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.color-swatch {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 90px;
+  height: 40px;
+  border-radius:90px; 
+  cursor: pointer;
+}
+
+.color-text {
+  transition: opacity 0.2s ease;
+}
+
+.color-dot {
+  position: absolute;
+  /* OVAL SHAPE */
+  width:90px;/* stretched horizontally */
+  height:45px;
+  border-radius: 140px/70px; 
+  background-color:var(--swatch-color);
+  opacity: 0;
+  transform: scale(0.85);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.color-swatch:hover .color-text {
+  opacity: 0;
+}
+
+.color-swatch:hover .color-dot {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* GSM pill base */
+.product-badge {
+  text-transform: uppercase;
+  padding: 10px 12px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  border-radius: 140px/70px;          /* OVAL */
+  border: 1.5px solid transparent;
+
+  transition: border-color 0.2s ease;
+}
+
+.product-section-title{
+  text-transform: uppercase;
+  font-weight:300;
+}
+/* SELECTED GSM */
+.product-badge.active {
+  border-color: #000;
+}
+
+.mobile-color-slabs {
+  display: none;
+}
+.mobile-product-gallery {
+  display: none;
+}
+.mobile-footer{
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .mobile-color-slabs {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-top: 24px;
+  }
+
+  .color-slab {
+    width: 100%;
+    height: 500px;
+    margin-bottom:10px;
+  }
+  .green-slab {
+    background-color:#9C4134;
+  }
+  .gulaab-slab {
+    background-color:#596B00;
+  }
+  .brown-slab {
+    background-color:#917830;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .add-to-cart-btn{
+    width:100%;
+    font-size:2.5rem;
+    border-radius:500px/150px;
+  }
+  .product-layout {
+    grid-template-columns:1fr;
+    gap: 24px;
+    padding:10px;
+    margin:0;
+    width:auto;
+    height:auto;
+  }
+
+  .product-media {
+    position:static;
+    padding:0;
+    height: auto;
+  }
+
+  .product-image {
+    width: 100vw;
+    max-height:95vh;
+  }
+  .product-info{
+    text-transform: uppercase;
+    font-weight: 300;
+  }
+
+  .product-details{
+    gap:10px;
+    padding:0;
+    width:auto;
+    height:auto;
+  }
+  .add-to-cart-btn {
+    height: 96px;
+
+  }
+   
+  .product-badge{
+    font-size:16px;
+  }
+
+  .product-badges{
+    padding:0;
+  }
+  .product-header {
+    gap: 6px;
+  }
+  .product-meta-row{
+    font-size:12px;
+    gap:10px;
+    padding:0;
+  }
+  .product-description{
+    font-size:14px;
+  }
+
+  .product-title,
+  .product-price {
+    font-size: 1.3rem;
+  }
+
+  .product-price{
+    padding-right:25px;
+  }
+  .mobile-footer{
+    display: block;
+  }
+
+  .mobile-product-gallery {
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+    margin-top:20px;
+  }
+
+  .mobile-gallery-image {
+    width: 100vw;
+    max-height:95vh;
+    object-fit: cover;
+  }
+}
+

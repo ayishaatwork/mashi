@@ -1,0 +1,151 @@
+/* FULL-BLEED PAGE */
+.legalPage {
+  width: 100%;
+  padding-bottom: 80px;
+}
+
+/* GRID LAYOUT */
+.legalGrid {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 96px;
+  margin-top: 80px;
+}
+
+/* LEFT — TITLE */
+.titleColumn {
+  position: sticky;
+  top:20px;/* distance from top (below header) */
+  padding-left:12px; /* ONLY left offset like design */
+  align-self: flex-start;
+}
+
+.titleColumn h1 {
+  font-size:3rem;
+  font-weight: 400;
+  line-height: 1.1;
+}
+
+/* RIGHT — CONTENT */
+.contentColumn {
+  max-width: 600px;
+  margin-left: auto;   /* THIS is the key line */
+  padding-right:20px;
+  margin-right:150px; /* keeps it off the edge */
+  font-size: 0.95rem;
+}
+
+
+/* SECTIONS + DIVIDERS */
+.section {
+  padding-bottom:15px;
+  margin-bottom:15px;
+  border-bottom: 1px solid #000;
+}
+
+.section:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+.section h2 {
+  font-size:1.6rem;
+  font-family:"MashiFont";
+  margin-bottom:6px;
+  font-weight:100;
+}
+
+.section p,
+.section li {
+  margin-bottom:2px;
+}
+
+.section p{
+  line-height:18px;
+}
+
+.section li{
+  line-height:18px;
+}
+.section ul {
+  padding-left:18px;
+  padding:0px;
+}
+
+/* MOBILE — SAME ALIGNMENT, STACKED */
+@media (max-width: 768px) {
+  .legalGrid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .titleColumn {
+    padding-left: 16px;
+    position:static;
+  }
+
+  .titleColumn h1 {
+    font-size: 2rem;
+  }
+
+  .contentColumn {
+    padding-right: 16px;
+    padding-left: 16px;
+    max-width: 100%;
+    margin-right:0px;
+    font-size: 0.9rem;
+  }
+}
+/* ===============================
+   RIGHT SIDE TYPOGRAPHY CONTROL
+   =============================== */
+
+/* Right side base text */
+.contentColumn {
+  font-size:14px;
+  line-height: 1.6;
+}
+
+.block {
+  margin-bottom:10px;
+}
+
+/* Sub headings — same size as body */
+.block h3{
+  font-family:"MashiFontBold";
+  font-size:14px;
+  font-weight:100;
+}
+
+/* Paragraphs */
+.block p {
+  margin: 0;
+}
+
+/* ===============================
+   LIST CONTROL (VERY IMPORTANT)
+   =============================== */
+
+/* Lists WITHOUT bullets (default) */
+.contentColumn ul {
+  list-style:disc;
+  padding-left: 0;
+  margin-left:14px;
+  line-height:16px;
+}
+
+.bulleted li {
+  margin-bottom: 6px;
+}
+
+/* Section dividers stay intact */
+
+
+.section:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+
